@@ -3,4 +3,17 @@ name = "love_sender"
 version = "0.1.0"
 edition = "2021"
 
+[[bin]]
+name = "beat"
+path = "src/beat.rs"
+
 [dependencies]
+anyhow = "1.0.98"
+celery = "0.5.5"
+chrono = "0.4.41"
+grammers-client = "0.7.0"
+grammers-session = "0.7.0"
+grammers-tl-types = "0.7.0"
+serde = "1.0.219"
+tokio = "1.45.0"
+env_logger = "0.11.8"
