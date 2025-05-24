@@ -17,7 +17,6 @@ const GREETINGS: [&'static str; 10] = [
     "Ти наймиліша!"
 ];
 
-
 #[celery::task]
 pub async fn send_greeting() -> TaskResult<()> {
     let today = Utc::now().date_naive();

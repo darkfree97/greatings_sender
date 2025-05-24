@@ -1,8 +1,6 @@
-mod tasks;
-mod telegram;
-
 use anyhow::Result;
-use crate::telegram::get_telegram_client;
+use love_sender::tasks;
+use love_sender::telegram::get_telegram_client;
 
 #[tokio::main]
 async fn main() -> Result<()> {
@@ -18,7 +16,7 @@ async fn main() -> Result<()> {
         ],
     ).await?;
     app.display_pretty().await;
-    app.send_task(tasks::send_greeting::new()).await?;
+    // app.send_task(tasks::send_greeting::new()).await?;
     app.consume_from(&[tasks::QUEUE_NAME]).await?;
     app.close().await?;
     Ok(())

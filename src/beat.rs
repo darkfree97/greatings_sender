@@ -1,8 +1,7 @@
-mod tasks;
-
 use anyhow::Result;
 use env_logger::Env;
 use celery::beat::{CronSchedule};
+use love_sender::tasks;
 
 #[tokio::main]
 async fn main() -> Result<()> {
